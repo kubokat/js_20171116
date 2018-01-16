@@ -240,26 +240,26 @@ exports.default = Textarea;
 
 var pug = __webpack_require__(6);
 
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (name, nums) {pug_html = pug_html + "\u003Cul\u003E";
-// iterate nums
-;(function(){
-  var $$obj = nums;
-  if ('number' == typeof $$obj.length) {
-      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
-        var num = $$obj[pug_index0];
-pug_html = pug_html + "\u003Cspan\u003E" + (pug.escape(null == (pug_interp = num) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index0 in $$obj) {
-      $$l++;
-      var num = $$obj[pug_index0];
-pug_html = pug_html + "\u003Cspan\u003E" + (pug.escape(null == (pug_interp = num) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-    }
-  }
-}).call(this);
-
-pug_html = pug_html + "\u003C\u002Ful\u003E\u003Cdiv class=\"chat\"\u003E\u003Cdiv class=\"chat_container\"\u003E\u003Cdiv class=\"chat__inner\" href=\"fadsfads\"\u003E" + (pug.escape(null == (pug_interp = name) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"nums" in locals_for_with?locals_for_with.nums:typeof nums!=="undefined"?nums:undefined));;return pug_html;};
+        function template(locals) {
+            var pug_html = "", pug_mixins = {}, pug_interp;
+            var n = 0;
+            pug_mixins["message"] = pug_interp = function (counter) {
+                var block = (this && this.block), attributes = (this && this.attributes) || {};
+                if (counter % 2 === 0) {
+                    pug_html = pug_html + "\u003Cdiv class=\"message message_receive\"\u003E\u003Cdiv class=\"message__header\"\u003EВасилий Пупкин\u003C\u002Fdiv\u003E\u003Cdiv class=\"message__body\"\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
+                }
+                else {
+                    pug_html = pug_html + "\u003Cdiv class=\"message message_send\"\u003E\u003Cdiv class=\"message__header\"\u003EЯ\u003C\u002Fdiv\u003E\u003Cdiv class=\"message__body\"\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
+                }
+            };
+            pug_html = pug_html + "\u003Cdiv class=\"chat\"\u003E\u003Cdiv class=\"chat_container\"\u003E\u003Cdiv class=\"chat__inner\"\u003E\u003Cdiv class=\"messages\"\u003E";
+            while (n < 4) {
+                pug_mixins["message"](n++);
+            }
+            pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"chat__footer\"\u003E\u003Cdiv class=\"message-create\"\u003E\u003Cdiv class=\"message-create__textarea js-textarea\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"message-create__submit js-submit\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"auth\"\u003E\u003Cdiv class=\"auth__name js-name\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"auth__submit js-submit-name\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
+            ;
+            return pug_html;
+        };
 module.exports = template;
 
 /***/ }),

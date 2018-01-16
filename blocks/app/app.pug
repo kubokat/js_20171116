@@ -1,3 +1,26 @@
+- var n = 0;
+
+mixin message(counter)
+
+    if counter % 2 === 0
+        div.message.message_receive
+            div.message__header Василий Пупкин
+            div.message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    else
+        div.message.message_send
+            div.message__header Я
+            div.message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
 div.chat
     div.chat_container
-        div.chat__inner #{name}
+        div.chat__inner
+            div.messages
+                while n < 4
+                    +message(n++)
+            div.chat__footer
+                div.message-create
+                    div.message-create__textarea.js-textarea
+                    div.message-create__submit.js-submit
+                div.auth
+                    div.auth__name.js-name
+                    div.auth__submit.js-submit-name
